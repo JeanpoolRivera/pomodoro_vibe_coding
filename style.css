@@ -154,6 +154,44 @@ h1 {
   color: var(--color-primary);
 }
 
+/* ===== Notification ===== */
+.notification {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+.notification.hidden {
+  display: none;
+}
+
+.notification.work-finished {
+  background-color: rgba(78, 204, 163, 0.15);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.notification.break-finished {
+  background-color: rgba(233, 69, 96, 0.15);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary-hover);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ===== Focus & Accessibility ===== */
 button:focus-visible {
   outline: 2px solid var(--color-success);
