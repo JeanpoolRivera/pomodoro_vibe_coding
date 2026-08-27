@@ -1,0 +1,183 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #1a1a2e;
+  --color-surface: #16213e;
+  --color-primary: #e94560;
+  --color-primary-hover: #ff6b81;
+  --color-secondary: #0f3460;
+  --color-secondary-hover: #1a4a7a;
+  --color-text: #eaeaea;
+  --color-text-muted: #a0a0b0;
+  --color-success: #4ecca3;
+  --radius: 12px;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ===== Main Container ===== */
+main {
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* ===== Title ===== */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ===== Mode Label ===== */
+#mode {
+  background-color: var(--color-secondary);
+  border-radius: 999px;
+  padding: 0.4rem 1.4rem;
+}
+
+#mode-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-success);
+}
+
+/* ===== Timer Display ===== */
+#timer {
+  padding: 1.5rem 0;
+}
+
+#time-display {
+  font-size: 5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+/* ===== Controls ===== */
+#controls {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+#controls button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  color: #fff;
+}
+
+#controls button:active {
+  transform: scale(0.97);
+}
+
+#btn-start {
+  background-color: var(--color-success);
+  color: var(--color-bg);
+}
+
+#btn-start:hover {
+  background-color: #5fd8b0;
+}
+
+#btn-pause {
+  background-color: var(--color-primary);
+}
+
+#btn-pause:hover {
+  background-color: var(--color-primary-hover);
+}
+
+#btn-reset {
+  background-color: var(--color-secondary);
+}
+
+#btn-reset:hover {
+  background-color: var(--color-secondary-hover);
+}
+
+/* ===== Footer ===== */
+#completed {
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  width: 100%;
+}
+
+#completed p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+#pomodoro-count {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ===== Focus & Accessibility ===== */
+button:focus-visible {
+  outline: 2px solid var(--color-success);
+  outline-offset: 2px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  main {
+    padding: 2rem 1.25rem;
+  }
+
+  #time-display {
+    font-size: 3.8rem;
+  }
+
+  #controls button {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #time-display {
+    font-size: 6rem;
+  }
+}
