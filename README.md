@@ -20,16 +20,45 @@ El desarrollo se realizará mediante un proceso conversacional e iterativo con a
 
 ## Bitácora de prompts
 
-La bitácora se irá completando durante el desarrollo.
+### Prompt 1 — Estructura HTML inicial
+**Objetivo:** Crear la estructura básica de la aplicación Pomodoro.
 
-### Prompt 1
+**Prompt:**
+> Quiero crear una aplicación web tipo Pomodoro usando HTML, CSS y JavaScript Vanilla. Empecemos poco a poco; por ahora quiero que crees solamente la estructura HTML de la aplicación, con un título, el modo actual (Work o Short Break), un temporizador, botones para Iniciar, Pausar y Reiniciar, y un contador que muestre los Pomodoros completados. Haz una estructura sencilla y semántica que podamos mejorar después. Por ahora no agregues estilos ni lógica JavaScript.
 
-Pendiente.
+**Resultado:** Se generó la estructura HTML5 inicial en `index.html`.
 
-### Prompt 2
+### Prompt 2 — Diseño visual
+**Objetivo:** Agregar estilos CSS y diseño responsive.
 
-Pendiente.
+**Resultado:** Se creó `style.css` con diseño responsive, controles, temporizador, colores, estados de interacción y mejoras básicas de accesibilidad.
 
-### Prompt 3
+### Prompt 3 — Temporizador
+**Objetivo:** Implementar la cuenta regresiva y el botón Start.
 
-Pendiente.
+**Resultado:** Se implementó el temporizador de 25 minutos utilizando JavaScript Vanilla y `setInterval`.
+
+### Prompt 4 — Pause y Reset
+**Objetivo:** Agregar los controles para pausar y reiniciar el temporizador.
+
+**Resultado:** Se implementaron Pause y Reset manteniendo el tiempo restante al pausar y restaurando 25:00 al reiniciar.
+
+### Prompt 5 — Ciclos Pomodoro
+**Objetivo:** Implementar el cambio entre Work y Short Break.
+
+**Resultado:** Se implementaron ciclos de 25 minutos de Work y 5 minutos de Short Break mediante `switchMode()`.
+
+### Prompt 6 — Contador de Pomodoros
+**Objetivo:** Contabilizar los ciclos de Work completados.
+
+**Resultado:** Se agregó un contador en memoria que aumenta únicamente cuando termina un ciclo de Work.
+
+### Prompt 7 — Notificaciones
+**Objetivo:** Agregar notificaciones visuales y sonoras al finalizar cada ciclo.
+
+**Resultado:** Se implementó una notificación visual y una alerta sonora mediante Web Audio API.
+
+### Prompt 8 — Accesibilidad
+**Objetivo:** Mejorar la accesibilidad sin modificar las funcionalidades existentes.
+
+**Resultado:** Se agregaron atributos ARIA, roles semánticos, navegación mediante teclado, soporte para lectores de pantalla y `prefers-reduced-motion`.
