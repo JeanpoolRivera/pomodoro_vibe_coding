@@ -1,5 +1,6 @@
 const timeDisplay = document.getElementById("time-display");
 const modeLabel = document.getElementById("mode-label");
+const pomodoroCount = document.getElementById("pomodoro-count");
 const btnStart = document.getElementById("btn-start");
 const btnPause = document.getElementById("btn-pause");
 const btnReset = document.getElementById("btn-reset");
@@ -9,6 +10,7 @@ const BREAK_SECONDS = 5 * 60;
 
 let totalSeconds = WORK_SECONDS;
 let currentMode = "work";
+let pomodorosCompleted = 0;
 let intervalId = null;
 
 function updateDisplay() {
@@ -35,6 +37,12 @@ function startTimer() {
     if (totalSeconds <= 0) {
       clearInterval(intervalId);
       intervalId = null;
+
+      if (currentMode === "work") {
+        pomodorosCompleted++;
+        pomodoroCount.textContent = pomodorosCompleted;
+      }
+
       switchMode(currentMode === "work" ? "break" : "work");
     }
   }, 1000);
