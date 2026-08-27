@@ -10,23 +10,23 @@
   <main>
     <h1>Pomodoro Timer</h1>
 
-    <section id="mode">
+    <div id="mode" role="status" aria-label="Modo actual">
       <span id="mode-label">Work</span>
-    </section>
+    </div>
 
-    <section id="timer">
-      <time id="time-display">25:00</time>
-    </section>
+    <div id="timer">
+      <time id="time-display" role="timer" aria-live="off" aria-atomic="true">25:00</time>
+    </div>
 
-    <section id="notification" class="notification hidden" aria-live="polite" role="alert">
+    <div id="notification" class="notification hidden" aria-live="assertive" role="status">
       <p id="notification-text"></p>
-    </section>
+    </div>
 
-    <section id="controls">
-      <button id="btn-start">Start</button>
-      <button id="btn-pause">Pause</button>
-      <button id="btn-reset">Reset</button>
-    </section>
+    <div id="controls" role="group" aria-label="Controles del temporizador">
+      <button id="btn-start" aria-describedby="time-display">Start</button>
+      <button id="btn-pause" aria-describedby="time-display">Pause</button>
+      <button id="btn-reset" aria-describedby="time-display" aria-label="Reiniciar temporizador">Reset</button>
+    </div>
 
     <footer id="completed">
       <p>Pomodoros completed: <span id="pomodoro-count">0</span></p>
